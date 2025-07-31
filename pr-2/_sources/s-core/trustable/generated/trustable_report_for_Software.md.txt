@@ -152,6 +152,6 @@ The contribution to the score of a parent item by a suspiciously linked child is
 _Generated for: Software_
 
 * _Repository root: /home/runner/work/json/json_
-* _Commit SHA: efc4010_
-* _Commit date/time: Thu Jul 31 15:11:47 2025_
-* _Commit tag: efc40102d402194d41ca49065bfc4b2431fc8cae_
+* _Commit SHA: b05c270_
+* _Commit date/time: Tue Jul 29 13:57:44 2025_
+* _Commit tag: b05c2702de79f5dc4c8b4ad13f9c575649a845de_
