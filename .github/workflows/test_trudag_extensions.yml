@@ -29,11 +29,17 @@ jobs:
         cd .dotstop_extensions
         pytest -v
 
+    - name: Checkout code at the provided SHA
+      uses: actions/checkout@v4
+      with:
+          # Checkout the exact SHA passed via environment variable
+          ref: ${{ env.COMMON_IDENTIFIER }}
+
     - name: Create Completion Flag
-      run: echo "Trudag extensions workflow completed." > TRUDAG_EXTENSIONS_flag1.txt
+      run: echo "Trudag extensions workflow completed." > TRUDAG_EXTENSIONS_flag_${{ env.COMMON_IDENTIFIER }}.txt
 
     - name: Upload completion artifact
       uses: actions/upload-artifact@v4
       with:
-        name: workflow-TRUDAG-EXTENSIONS-completed1
-        path: TRUDAG_EXTENSIONS_flag1.txt
+        name: workflow-TRUDAG-EXTENSIONS-completed_${{ env.COMMON_IDENTIFIER }}
+        path: TRUDAG_EXTENSIONS_flag_${{ env.COMMON_IDENTIFIER }}.txt

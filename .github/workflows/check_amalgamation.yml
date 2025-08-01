@@ -76,11 +76,17 @@ jobs:
           echo Check
           find $MAIN_DIR -name '*.orig' -exec false {} \+
 
+      - name: Checkout code at the provided SHA
+        uses: actions/checkout@v4
+        with:
+          # Checkout the exact SHA passed via environment variable
+          ref: ${{ env.COMMON_IDENTIFIER }}
+
       - name: Create Completion Flag
-        run: echo "Check amalgamation workflow completed." > AMALGAMATION_flag1.txt
+        run: echo "Check amalgamation workflow completed." > AMALGAMATION_flag_${{ env.COMMON_IDENTIFIER }}.txt
 
       - name: Upload completion artifact
         uses: actions/upload-artifact@v4
         with:
-          name: workflow-AMALGAMATION-completed1
-          path: AMALGAMATION_flag1.txt
+          name: workflow-AMALGAMATION-completed_${{ env.COMMON_IDENTIFIER }}
+          path: AMALGAMATION_flag_${{ env.COMMON_IDENTIFIER }}.txt
