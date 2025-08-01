@@ -7,7 +7,7 @@ permissions:
   pages: write
   pull-requests: write
   id-token: write
-#test7
+#test8
 jobs:
   trigger-workflows:
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
 
       - name: Wait and Download Artifacts From Child Workflows
         env:
-        GH_TOKEN: ${{ secrets.PARENT_WORKFLOW_TRIGGER }}
+          GH_TOKEN: ${{ secrets.PARENT_WORKFLOW_TRIGGER }}
         run: |
           echo "Waiting for artifacts from child workflows..."
 
