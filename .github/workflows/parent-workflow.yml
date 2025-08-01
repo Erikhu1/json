@@ -18,15 +18,15 @@ jobs:
 
       - name: Trigger "Check Amalgamation" Workflow
         run: |
-          echo "Triggering Check Amalgamation workflow with SHA: ${{ github.sha }}"
-          gh workflow run "Check amalgamation" --ref $GITHUB_SHA -F PARENT_SHA=${{ github.sha }}
+          echo "Triggering Check Amalgamation workflow with branch: ${{ github.head_ref }}"
+          gh workflow run "Check amalgamation" --ref ${{ github.head_ref }} -F PARENT_SHA=${{ github.sha }}
         env:
           GH_TOKEN: ${{ secrets.PARENT_WORKFLOW_TRIGGER }}
 
       - name: Trigger "Test Trudag Extensions" Workflow
         run: |
-          echo "Triggering Test Trudag Extensions workflow with SHA: ${{ github.sha }}"
-          gh workflow run "Test Trudag extensions" --ref $GITHUB_SHA -F PARENT_SHA=${{ github.sha }}
+          echo "Triggering Test Trudag Extensions workflow with branch: ${{ github.head_ref }}"
+          gh workflow run "Test Trudag extensions" --ref ${{ github.head_ref }} -F PARENT_SHA=${{ github.sha }}
         env:
           GH_TOKEN: ${{ secrets.PARENT_WORKFLOW_TRIGGER }}
 
@@ -35,8 +35,8 @@ jobs:
 
       - name: Trigger "Pull Request Labeler" Workflow
         run: |
-          echo "Triggering Pull Request Labeler workflow with SHA: ${{ github.sha }}"
-          gh workflow run "Pull Request Labeler" --ref $GITHUB_SHA -F PARENT_SHA=${{ github.sha }}
+          echo "Triggering Pull Request Labeler workflow with branch: ${{ github.head_ref }}"
+          gh workflow run "Pull Request Labeler" --ref ${{ github.head_ref }} -F PARENT_SHA=${{ github.sha }}
         env:
           GH_TOKEN: ${{ secrets.PARENT_WORKFLOW_TRIGGER }}
 
