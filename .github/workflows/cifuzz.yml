@@ -1,7 +1,8 @@
-name: CIFuzz
-on: 
+name: "CIFuzz"
+
+on:
   workflow_dispatch:
-    inputs:
+     inputs:
       PARENT_SHA:
         description: "Parent Workflow SHA"
         required: true
