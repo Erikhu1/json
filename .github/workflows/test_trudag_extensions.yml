@@ -35,5 +35,5 @@ jobs:
     - name: Upload completion artifact
       uses: actions/upload-artifact@v4
       with:
-        name: workflow-TRUDAG-EXTENSIONS-completed_${{ github.sha }}
+        name: workflow-TRUDAG-EXTENSIONS-completed
         path: TRUDAG_EXTENSIONS_flag.txt

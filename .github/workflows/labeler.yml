@@ -32,5 +32,5 @@ jobs:
       - name: Upload completion artifact
         uses: actions/upload-artifact@v4
         with:
-          name: workflow-LABELER-completed_${{ github.sha }}
+          name: workflow-LABELER-completed
           path: LABELER_flag.txt

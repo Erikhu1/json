@@ -7,7 +7,7 @@ permissions:
   pages: write
   pull-requests: write
   id-token: write
-#test15
+#test16
 jobs:
   trigger-workflows:
     runs-on: ubuntu-latest
@@ -41,9 +41,9 @@ jobs:
           echo "Waiting for artifacts from child workflows..."
 
           REQUIRED_ARTIFACTS=(
-            workflow-AMALGAMATION-completed_${{ github.sha }}
-            workflow-TRUDAG-EXTENSIONS-completed_${{ github.sha }}
-            workflow-LABELER-completed_${{ github.sha }}
+            workflow-AMALGAMATION-completed
+            workflow-TRUDAG-EXTENSIONS-completed
+            workflow-LABELER-completed
           )
 
           COMPLETED=false

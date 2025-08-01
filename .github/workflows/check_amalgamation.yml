@@ -82,5 +82,5 @@ jobs:
       - name: Upload completion artifact
         uses: actions/upload-artifact@v4
         with:
-          name: workflow-AMALGAMATION-completed_${{ github.sha }}
+          name: workflow-AMALGAMATION-completed
           path: AMALGAMATION_flag.txt
