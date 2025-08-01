@@ -1,3 +1,14 @@
+name: CIFuzz
+on: 
+  workflow_dispatch:
+    inputs:
+      PARENT_SHA:
+        description: "Parent Workflow SHA"
+        required: true
+
+permissions:
+  contents: read
+
 jobs:
   Fuzzing:
     runs-on: ubuntu-latest
