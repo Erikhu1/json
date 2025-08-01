@@ -31,7 +31,9 @@ jobs:
           GH_TOKEN: ${{ secrets.PARENT_WORKFLOW_TRIGGER }}
 
       - name: Trigger "CIFuzz" Workflow
-        run: gh workflow run "CIFuzz" --ref ${{ github.head_ref }} -F PARENT_SHA=${{ github.sha }}
+        run: |
+          echo "Triggering cifuzz workflow with branch: ${{ github.head_ref }}"
+          gh workflow run "CIFuzz" --ref ${{ github.head_ref }} -F PARENT_SHA=${{ github.sha }}
         env:
           GH_TOKEN: ${{ secrets.PARENT_WORKFLOW_TRIGGER }}
 
