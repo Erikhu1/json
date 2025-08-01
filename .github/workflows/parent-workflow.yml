@@ -41,9 +41,9 @@ jobs:
           echo "Waiting for artifacts from child workflows..."
 
           REQUIRED_ARTIFACTS=(
-            workflow-AMALGAMATION-completed
-            workflow-TRUDAG-EXTENSIONS-completed
-            workflow-LABELER-completed  
+            workflow-AMALGAMATION-completed-${{ github.run_id }}
+            workflow-TRUDAG-EXTENSIONS-completed-${{ github.run_id }}
+            workflow-LABELER-completed-${{ github.run_id }}
           )
 
           COMPLETED=false
